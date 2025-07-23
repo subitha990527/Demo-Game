@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mumbai Mafia Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="background" id="login-screen">
+    <!-- <div class="logo"><img src="" alt="Game Logo"></div> -->
+    <p class="status-text">GooglePlayGames - Could not Connect!</p>
+    <div class="login-buttons">
+      <button class="facebook">Login with Facebook</button>
+      <button class="play">Google Play Games</button>
+      <button class="google">Google Account</button>
+      <button class="guest" onclick="openDashboard()">Guest Login</button>
+    </div>
+
+  </div>
+
+  
+  <!-- GUEST DASHBOARD -->
+  <div class="dashboard hidden" id="dashboard-screen">
+    <h2>Welcome, <span id="user-name">Guest</span>!</h2>
+    <p>Stats:</p>
+    <ul class="stats">
+      <li>XP: <span id="xp">150</span></li>
+      <li>Coins: <span id="coins">500</span></li>
+    </ul>
+    <div class="dashboard-buttons">
+      <!-- <button onclick="alert('Fight feature coming soon')">Fight</button> -->
+      <button onclick="showFightScreen()">Fight</button>
+      <!-- <button onclick="alert('Map screen coming soon')">Map</button> -->
+      <button onclick="showMapScreen()">Map</button>
+      <!-- <button onclick="alert('Inventory coming soon')">Inventory</button> -->
+      <button onclick="showInventory()">Inventory</button>
+    </div>
+    <button class="logout" onclick="goBack()">Logout</button>
+  </div>
+
+
+<!-- FIGHT Page -->
+<div class="fight-modal hidden" id="fight-modal">
+  <div class="fight-popup">
+    <div class="fight-header">
+      <span class="fight-title">YOU VS Enemy</span>
+      <button class="fight-close" onclick="closeFight()">✖</button>
+    </div>
+    <img src="img/Enemy.png" alt="Enemy" class="enemy-img" />
+    <p id="fight-log">Choose your action:</p>
+    <div class="fight-actions">
+      <button onclick="performAction('attack')">Attack</button>
+      <button onclick="performAction('dodge')">Dodge</button>
+      <button onclick="performAction('item')">Use Item</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- MAP Page -->
+<div class="map-modal hidden" id="map-modal">
+  <div class="map-popup">
+    <div class="map-header">
+      <span class="map-title">📍 Mumbai Areas</span>
+      <button class="map-close" onclick="closeMap()">✖</button>
+    </div>
+    <div class="map-areas">
+      <div class="map-card" onclick="visitArea('Dharavi')">🏚 Dharavi</div>
+      <div class="map-card" onclick="visitArea('Andheri')">🏙 Andheri</div>
+      <div class="map-card" onclick="visitArea('Colaba')">🌆 Colaba</div>
+    </div>
+    <p id="map-result" class="map-result"></p>
+  </div>
+</div>
+
+
+<!-- INVENTORY Page -->
+<div class="inventory-modal hidden" id="inventory-modal">
+  <div class="inventory-popup">
+    <div class="inventory-header">
+      <span class="inventory-title">🎒 Your Inventory</span>
+      <button class="inventory-close" onclick="closeInventory()">✖</button>
+    </div>
+
+    <ul class="inventory-list">
+      <li>
+        Health Potion
+        <button onclick="useItem('Health Potion')">Use</button>
+        <button onclick="sellItem('Health Potion')">Sell</button>
+        <button onclick="upgradeItem('Health Potion')">Upgrade</button>
+      </li>
+      <li>
+        Knife
+        <button onclick="useItem('Knife')">Use</button>
+        <button onclick="sellItem('Knife')">Sell</button>
+        <button onclick="upgradeItem('Knife')">Upgrade</button>
+      </li>
+      <li>
+        Armor
+        <button onclick="useItem('Armor')">Use</button>
+        <button onclick="sellItem('Armor')">Sell</button>
+        <button onclick="upgradeItem('Armor')">Upgrade</button>
+      </li>
+    </ul>
+    <p id="inventory-log" class="inventory-log"></p>
+  </div>
+</div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
