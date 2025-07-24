@@ -44,7 +44,7 @@ This project is a mobile-friendly mini game demo inspired by *Mumbai Mafia*, bui
       - cordova platform add android
   - Build the APK:
       - cordova build android
-      - Link of APK ()
+      - Link of APK (C:\Demogame\minigame\platforms\android\app\build\outputs\apk\debug\app-debug.apk)
   - Run on a device
       - cordova run android
 
