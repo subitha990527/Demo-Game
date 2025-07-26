@@ -19,7 +19,7 @@ This project is a mobile-friendly mini game demo inspired by *Mumbai Mafia*, bui
 ### Prerequisites:
 - Node.js
 - Cordova CLI
-- Gradleinstalled and added to system PATH
+- Gradle
 
 ### Steps:
 
